@@ -1,0 +1,149 @@
+﻿@{
+    ViewBag.Title = "LayoutDemos";
+}
+
+<h2>LayoutDemos</h2>
+
+Basics of Layout 
+
+Basic grid HTML
+For a simple two column layout, create a .row and add the appropriate number of .span* columns.
+<br />
+As this is a 12-column grid, each .span* spans a number of those 12 columns, and should always add up to 12 for each row (or the number of columns in the parent).
+<pre class="prettyprint linenums language-css" style="width: auto;">
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;span4&quot;&gt; Your First Row,  first Column of 4&lt;/div&gt;
+        &lt;div class=&quot;span8&quot;&gt;Your First Row, Second Column of 8&lt;/div&gt;
+    &lt;/div&gt;
+    
+     &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;span4&quot;&gt; Your Second Row, First Column of 4&lt;/div&gt;
+        &lt;div class=&quot;span8&quot;&gtYour Second Row, 2 Column of 8&lt;/div&gt;
+    &lt;/div&gt;
+    
+     &lt;-- so on--&gt;
+</pre>
+<h4>Output</h4>
+
+<div class="row show-grid">
+    <div class="span4">Four Column Width  </div>
+    <div class="span4">Eight Column Width</div>
+</div>
+
+<h5>Real time Usage : Developing a input form (column width : span2, span10)  </h5>
+
+<form>
+    <div class="row">
+        <div class="span2">
+            <div class="control-group">
+                <label class="control-label" for="txtUserName">User Name</label>
+
+            </div>
+        </div>
+        <div class="span10" data-original-title="" title="">
+            <div class="controls">
+                <input type="text" id="txtUserName" placeholder="UserName">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span2">
+            <div class="control-group">
+                <label class="control-label" for="txtEmailID">Email ID</label>
+
+            </div>
+        </div>
+        <div class="span10" data-original-title="" title="">
+            <div class="controls">
+                <input type="email" id="txtEmailID" placeholder="Email">
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<h5>Nesting columns</h5>
+
+<ul>
+    <li>You can nest your content with grid. </li>
+    <li>Add a new .row class and set the parent span* columns</li>
+    <li>Withing an Exisitng span* column, add nested span* columns, nested columns sum should be equal to the parent span* column. </li>
+</ul>
+
+
+
+
+<pre class="prettyprint linenums language-css">
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;span9&quot;&gt;
+        Parent Column -- with column of 9
+      &lt;div class=&quot;row&quot;&gt;
+
+          &lt;div class=&quot;span6&quot;&gt;Nested Column 1, column of 6&lt;/div&gt;
+          &lt;div class=&quot;span3&quot;&gt;Nested Column 2, column of 3&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+</pre>
+
+
+<div class="row show-grid">
+    <div class="span9">
+        Parent Column -- with column of 9
+      <div class="row">
+          @*Total Number of column should be equal to the parent column *@
+          <div class="span6">Nested Column 1, column of 6</div>
+          <div class="span3">Nested Column 2, column of 3</div>
+      </div>
+    </div>
+</div>
+
+<h4>Boot strap Offers Fluid and fixed layout</h4>
+<p>
+    Before we go with code, we can look what Fluid and Fixed layout it is 
+</p>
+
+<blockquote cite="http://coding.smashingmagazine.com/2009/06/02/fixed-vs-fluid-vs-elastic-layout-whats-the-right-one-for-you/">
+    Fluid Layout :  a fluid website layout, also referred to as a liquid layout, the majority of the components inside have percentage widths, and thus adjust to the user’s screen resolution.
+    
+        Fixed Layout :  A fixed website layout has a wrapper that is a fixed width, and the components inside it have either percentage widths or fixed widths. The important thing is that the container (wrapper) element is set to not move. No matter what screen resolution the visitor has, he or she will see the same width as other visitors.    
+        
+        <br />
+    <a href="http://coding.smashingmagazine.com/2009/06/02/fixed-vs-fluid-vs-elastic-layout-whats-the-right-one-for-you/">Fixed Vs Fluid</a>
+</blockquote>
+
+
+<h5>Basic fluid grid HTML</h5>
+
+Make any row "fluid" by changing .row to .row-fluid. The column classes stay the exact same, making it easy to flip between fixed and fluid grids.
+
+<pre class="prettyprint linenums language-css">
+  &lt;div class=&quot;.row-fluid&quot;&gt;
+    &lt;div class=&quot;span9&quot;&gt;
+        Parent Column -- with column of 9
+      &lt;div class=&quot;row&quot;&gt;
+
+          &lt;div class=&quot;span6&quot;&gt;Nested Column 1, column of 6&lt;/div&gt;
+          &lt;div class=&quot;span3&quot;&gt;Nested Column 2, column of 3&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+</pre>
+
+
+<h4>Responsive Design</h4>
+<p> Add below code to your head tag and check the responiveness of the web pages, since i already added the Css to the StyleSheet bundles, you can resize your browser and experience it </p>
+<pre class="prettyprint linenums">
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;link href=&quot;assets/css/bootstrap-responsive.css&quot; rel=&quot;stylesheet&quot;&gt;
+</pre>
+
+<h3>Worth Reading </h3>
+<ul>
+    <li><a href="http://twitter.github.io/bootstrap/scaffolding.html">Bootstrap Documentation</a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Mobile/Viewport_meta_tag">Meta -Viewport </a></li>
+    <li><a href="http://coding.smashingmagazine.com/2009/06/02/fixed-vs-fluid-vs-elastic-layout-whats-the-right-one-for-you/">Fixed VS Fluid</a></li>
+    <li><a href="https://docs.google.com/presentation/d/1rmxwWa9P6_xHqonmh5ONXRS-jPc5XKbnv99Rjkhe04s/present#slide=id.i0">Idiot Guide to meta Viewport</a></li>
+    
+</ul>

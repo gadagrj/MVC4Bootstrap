@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+
+
+    @Styles.Render("~/Content/bootstrap")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="http://twitter.github.io/bootstrap/assets/js/google-code-prettify/prettify.css" type="text/css" />
+    <style>
+      
+    </style>
+</head>
+<body onload="prettyPrint()">
+    <header>
+        <div class="navbar">
+            <div class="navbar-inner navbar-fixed-top">
+                <div class="container">
+                    <!-- your Brand Logo, Using .brand class-->
+                    <a class="brand" href="#">Layout Demos</a>
+                    <!-- Be sure to leave the brand out there if you want it shown -->
+
+                    <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+
+                    <ul class="nav">
+                        <li class="active"><a href="@Url.Action("LayoutDemos", "Home")">LayOut Demos</a></li>
+                        <li><a href="@Url.Action("FormDemos", "Home")">Form Demos</a></li>
+                        <li><a href="@Url.Action("JavascirptDemos", "Home")">Javascrip Demos</a></li>
+                    </ul>
+
+                    <!-- Everything you want hidden at 940px or less, place within here :STARTS -->
+                    <div class="nav-collapse collapse">
+                        <!-- .nav, .navbar-search, .navbar-form, etc -->
+                        <form class="navbar-search pull-left">
+                            <input type="text" class="search-query" placeholder="Search">
+                        </form>
+                    </div>
+                    <!-- Everything you want hidden at 940px or less, place within here ENDS -->
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        @RenderSection("featured", required: false)
+        <section class="content-wrapper main-content clear-fix">
+            @RenderBody()
+        </section>
+    </div>
+    <footer>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="http://twitter.github.io/bootstrap/assets/js/google-code-prettify/prettify.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

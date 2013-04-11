@@ -1,0 +1,225 @@
+﻿@{
+    ViewBag.Title = "FormDemos";
+}
+
+<h2>FormDemos</h2>
+
+<h4>Utility Classes 
+</h4>
+
+<p>Bootstrap provides utility classes, which is essential to style your labels according to the condition</p>
+<ul>
+    <li>Muted : Disabled Text
+    </li>
+    <li>Warning : Warning text to indicating caution 
+
+    </li>
+    <li>error : Error text, in the color of red. </li>
+    <li>Information : Information text, in the color of blue. </li>
+    <li>Success : Success text, in the color of Green. </li>
+</ul>
+<pre class="prettyprint linenums">
+&lt;p class=&quot;muted&quot;&gt;Disabled Text&lt;/p&gt;
+&lt;p class=&quot;text-warning&quot;&gt;A Warning Text&lt;/p&gt;
+&lt;p class=&quot;text-error&quot;&gt;An Error Text &lt;/p&gt;
+&lt;p class=&quot;text-info&quot;&gt;An Information text&lt;/p&gt;
+&lt;p class=&quot;text-success&quot;&gt;Success Text&lt;/p&gt; 
+</pre>
+
+<h4>output of above code </h4>
+<p class="muted">Disabled Text</p>
+<p class="text-warning">A Warning Text</p>
+<p class="text-error">An Error Text </p>
+<p class="text-info">An Information text</p>
+<p class="text-success">Success Text</p>
+
+
+<h4>HTML table layout</h4>
+For basic styling—light padding and only horizontal dividers—add the base class .table to any table element. 
+<h5>Option classes for Table Layout</h5>
+<ul>
+    <li>table-hover : Hover style for table. </li>
+    <li>table-bordered : Bordered table style  </li>
+    <li>table-condensed : Makes tables more compact by cutting cell padding in half. </li>
+</ul>
+<pre class="prettyprint linenums">
+    &lt;table class=&quot;table&quot;&gt;  &lt;-- here you are applying table class first and then applying the optional class. for eg: class="table table-bordered" will give bordered table--&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Column 1&lt;/td&gt;
+        &lt;td&gt;Column 2&lt;/td&gt;
+        &lt;td&gt;Column 3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Row 2, Column 1&lt;/td&gt;
+        &lt;td&gt; row 2, Column 2&lt;/td&gt;
+        &lt;td&gt;Row 2,Column 3&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>1st</th>
+        <th>2nd</th>
+        <th>3rd</th>
+    </tr>
+    <tr>
+        <td>Column 1</td>
+        <td>Column 2</td>
+        <td>Column 3</td>
+    </tr>
+    <tr>
+        <td>Row 2, Column 1</td>
+        <td>row 2, Column 2</td>
+        <td>Row 2,Column 3</td>
+    </tr>
+</table>
+
+
+
+
+<h3>Form Styles </h3>
+
+Default styles
+Individual form controls receive styling, but without any required base class on the  form tag or large changes in markup. Results in stacked, left-aligned labels on top of form controls.
+
+<pre class="prettyprint linenums">
+&lt;form&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;Legend&lt;/legend&gt;
+    &lt;label&gt;Label name&lt;/label&gt;
+    &lt;input type=&quot;text&quot; placeholder=&quot;Type something…&quot;&gt;
+    &lt;span class=&quot;help-block&quot;&gt;Example block-level help text here.&lt;/span&gt;
+    &lt;label class=&quot;checkbox&quot;&gt;
+      &lt;input type=&quot;checkbox&quot;&gt; Check me out
+    &lt;/label&gt;
+    &lt;button type=&quot;submit&quot; class=&quot;btn&quot;&gt;Submit&lt;/button&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;
+</pre>
+<h4>Output of the above code</h4>
+<form>
+    <fieldset>
+        <legend>Legend</legend>
+        <label>Label name</label>
+        <input type="text" placeholder="Type something…">
+        <span class="help-block">Example block-level help text here.</span>
+        <label class="checkbox">
+            <input type="checkbox">
+            Check me out
+        </label>
+        <button type="submit" class="btn">Submit</button>
+    </fieldset>
+</form>
+
+
+<h4>Text and buttons </h4>
+<div class="input-append">
+    <input class="span2" id="appendedInputButtons" type="text">
+    <button class="btn" type="button">Search</button>
+    <button class="btn" type="button">Options</button>
+</div>
+
+<h4>button Dropdown menu</h4>
+
+<div class="input-append">
+    <input class="span2" id="appendedDropdownButton" type="text">
+    <div class="btn-group">
+        <button class="btn dropdown-toggle" data-toggle="dropdown">
+            Action
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a href="#">FirstMenu</a></li>
+            <li><a href="#">SecondMenu</a></li>
+            <li><a href="#">ThirdMenu</a></li>
+        </ul>
+    </div>
+</div>
+
+<h5>Button Styles and classes
+</h5>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Button</th>
+            <th>class=""</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <button type="button" class="btn">Default</button></td>
+            <td><code>btn</code></td>
+            <td>Standard gray button with gradient</td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" class="btn btn-primary">Primary</button></td>
+            <td><code>btn btn-primary</code></td>
+            <td>Provides extra visual weight and identifies the primary action in a set of buttons</td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" class="btn btn-info">Info</button></td>
+            <td><code>btn btn-info</code></td>
+            <td>Used as an alternative to the default styles</td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" class="btn btn-success">Success</button></td>
+            <td><code>btn btn-success</code></td>
+            <td>Indicates a successful or positive action</td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" class="btn btn-warning">Warning</button></td>
+            <td><code>btn btn-warning</code></td>
+            <td>Indicates caution should be taken with this action</td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" class="btn btn-danger">Danger</button></td>
+            <td><code>btn btn-danger</code></td>
+            <td>Indicates a dangerous or potentially negative action</td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" class="btn btn-inverse">Inverse</button></td>
+            <td><code>btn btn-inverse</code></td>
+            <td>Alternate dark gray button, not tied to a semantic action or use</td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" class="btn btn-link">Link</button></td>
+            <td><code>btn btn-link</code></td>
+            <td>Deemphasize a button by making it look like a link while maintaining button behavior</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+<h5>Button Groups
+</h5>
+
+<div class="btn-group">
+    <button class="btn">Left</button>
+    <button class="btn">Middle</button>
+    <button class="btn">Right</button>
+</div>
+
+
+
+<h4>Tabs</h4>
+
+<ul class="nav nav-tabs">
+    <li class="active">
+        <a href="#">Home</a>
+    </li>
+    <li><a href="#">...</a></li>
+    <li><a href="#">...</a></li>
+</ul>
+
